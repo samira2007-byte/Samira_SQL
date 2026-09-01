@@ -209,4 +209,116 @@ SELECT * FROM certificate;
 Engineering Student | Electronics & Communication
 
 
-⭐ If you found this repository useful, consider giving it a star!
+
+
+# EXP5 – SQL Indexing
+
+## 📌 Description
+
+This experiment demonstrates the use of **indexes in SQL** to improve the efficiency of data retrieval.
+
+A `school_db` database is created with a `students` table containing student details such as student ID, name, age, class, section, city, and marks. Sample records are inserted into the table, and the `EXPLAIN` command is used before and after creating an index on the `city` column.
+
+## 🎯 Objectives
+
+* Create a database and student table.
+* Insert student records into the table.
+* Retrieve student information using `SELECT`.
+* Analyze a query using the `EXPLAIN` statement.
+* Create an index on the `city` column.
+* Display the indexes using `SHOW INDEX`.
+* Compare query execution before and after indexing.
+
+## 🛠️ Technologies Used
+
+* **MySQL**
+* **SQL**
+* **MySQL Workbench** (recommended)
+
+## 📂 File Structure
+
+```text
+EXP5/
+│
+├── Exp5.sql
+└── README.md
+```
+
+## 🗄️ Database Structure
+
+### Database
+
+`school_db`
+
+### Table
+
+`students`
+
+| Column       | Data Type   | Description     |
+| ------------ | ----------- | --------------- |
+| student_id   | INT         | Primary key     |
+| student_name | VARCHAR(50) | Student name    |
+| age          | INT         | Student age     |
+| class        | INT         | Student's class |
+| section      | CHAR(1)     | Student section |
+| city         | VARCHAR(50) | Student's city  |
+| marks        | INT         | Student marks   |
+
+The table structure and primary key are defined in the SQL script.
+
+## 🔑 Key SQL Concepts
+
+### 1. Database and Table Creation
+
+The script creates the `school_db` database and `students` table.
+
+### 2. Data Insertion
+
+Sample student records are inserted into the table, including students from cities such as Nagpur, Pune, and Mumbai.
+
+### 3. EXPLAIN
+
+The `EXPLAIN` statement is used to examine how MySQL executes a query filtering students by city.
+
+### 4. Creating an Index
+
+An index named `idx_student_city` is created on the `city` column.
+
+```sql
+CREATE INDEX idx_student_city
+ON students(city);
+```
+
+### 5. Checking the Index
+
+The following command displays the indexes associated with the `students` table:
+
+```sql
+SHOW INDEX FROM students;
+```
+
+### 6. Query Using the Indexed Column
+
+The script again uses `EXPLAIN` and then retrieves students whose city is Nagpur.
+
+## ▶️ How to Run
+
+1. Open **MySQL Workbench**.
+2. Open the `Exp5.sql` file.
+3. Execute the complete SQL script.
+4. Check the created database and `students` table.
+5. Run the queries individually if you want to observe the output.
+6. Use `EXPLAIN` to analyze the query execution plan before and after creating the index.
+
+## 📊 Expected Outcome
+
+The experiment demonstrates how an index can be created on a frequently searched column such as `city` and how `EXPLAIN` can be used to inspect query execution.
+
+## 👩‍💻 Author
+
+**Samira Upadhye**
+
+---
+
+
+
